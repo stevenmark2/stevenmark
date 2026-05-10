@@ -55,16 +55,13 @@
     .hero-eyebrow::before { content: ''; width: 0; height: 1px; background: var(--orange); animation: expandLine 0.6s ease 0.5s forwards; }
     @keyframes expandLine { to { width: 28px; } }
     @keyframes slideRight { from{opacity:0;transform:translateX(-20px)} to{opacity:1;transform:translateX(0)} }
-
     .hero-name-block { opacity: 0; animation: slideUp 1s cubic-bezier(0.22,1,0.36,1) 0.35s forwards; margin-bottom: 1.5rem; }
     @keyframes slideUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-
     .hero-photo-name { display: flex; align-items: center; gap: 20px; }
     .hero-photo { width: 74px; height: 74px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--orange); flex-shrink: 0; transition: transform 0.4s ease, box-shadow 0.4s ease; }
     .hero-photo:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(191,87,0,0.25); }
     .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(42px,6vw,80px); font-weight: 300; line-height: 0.95; letter-spacing: -2px; }
     .hero-name em { font-style: italic; color: var(--orange); display: block; }
-
     .hero-sub { font-size: 13px; color: var(--text-2); max-width: 440px; line-height: 1.85; margin-bottom: 2.5rem; opacity: 0; animation: slideUp 1s cubic-bezier(0.22,1,0.36,1) 0.5s forwards; }
     .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; opacity: 0; animation: slideUp 1s cubic-bezier(0.22,1,0.36,1) 0.65s forwards; }
     .btn { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1.5px; padding: 11px 22px; border-radius: var(--r); cursor: pointer; transition: all 0.3s cubic-bezier(0.22,1,0.36,1); text-transform: uppercase; display: inline-block; position: relative; overflow: hidden; }
@@ -77,7 +74,7 @@
 
     /* ── PCB GRAPHIC ── */
     .hero-right { display: flex; justify-content: center; align-items: center; position: relative; opacity: 0; animation: slideUp 1.2s cubic-bezier(0.22,1,0.36,1) 0.4s forwards; }
-    .pcb-wrap { position: relative; width: 100%; max-width: 520px; }
+    .pcb-wrap { position: relative; width: 100%; max-width: 520px; transition: transform 0.1s ease; }
     .pcb-shadow { position: absolute; inset: -20px; background: radial-gradient(ellipse at center, rgba(191,87,0,0.08) 0%, transparent 70%); border-radius: 50%; animation: breathe 4s ease-in-out infinite; }
     @keyframes breathe { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.08);opacity:0.7} }
     #pcb-svg { width: 100%; height: auto; filter: drop-shadow(0 20px 60px rgba(191,87,0,0.15)); transition: filter 0.4s ease; }
@@ -114,7 +111,6 @@
     .delay-3 { transition-delay: 0.3s; }
     .delay-4 { transition-delay: 0.4s; }
     .delay-5 { transition-delay: 0.5s; }
-    .delay-6 { transition-delay: 0.6s; }
 
     /* ── SECTION ── */
     .sec-head { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3rem; padding-top: 5rem; overflow: hidden; }
@@ -241,7 +237,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="mailto:smw4789@mu.utexas.edu">Contact</a></li>
+    <li><a href="mailto:smw4789@my.utexas.edu">Contact</a></li>
   </ul>
   <div class="nav-dot"></div>
 </nav>
@@ -256,16 +252,16 @@
           <div class="hero-photo-name">
             <img src="images/steven.png" alt="Steven Wimberly" class="hero-photo"/>
             <div>
-              <div class="hero-name">Steven<br>Wimberly<br></div>
+              <div class="hero-name">Steven<br>Wimberly</div>
             </div>
           </div>
         </div>
-        <p class="hero-sub">I design embedded systems and PCBs — from power electronics and sensor nodes to flight hardware and motor controllers. Based in Austin, TX.</p>
+        <p class="hero-sub">I work on all kinds of electrical engineering projects. Based in Austin, TX.</p>
         <div class="hero-btns">
           <a class="btn btn-solid" href="#projects"><span>View Projects</span></a>
-          <a class="btn btn-outline" href="https://github.com/stevenmark2" target="_blank">GitHub</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/steven-wimberly-38854a222/" target="_blank">LinkedIn</a>
-          <a class="btn btn-outline" href="2025_Steven_Resume.pdf" target="_blank">Resume PDF</a>
+          <a class="btn btn-solid" href="https://github.com/stevenmark2" target="_blank">GitHub</a>
+          <a class="btn btn-solid" href="https://www.linkedin.com/in/steven-wimberly-38854a222/" target="_blank">LinkedIn</a>
+          <a class="btn btn-solid" href="2025_Steven_Resume.pdf" target="_blank">Resume PDF</a>
         </div>
       </div>
 
@@ -447,27 +443,27 @@
     </div>
     <div class="about-grid">
       <div class="about-text reveal-left">
-        <p>I'm an <strong>Electrical &amp; Computer Engineering student at UT Austin</strong> (graduating May 2029) focused on embedded systems, PCB design, and power electronics. I build real hardware — boards that solve real problems, fly on spacecraft, and drive motors on robots.</p>
-        <p>Before UT, I researched at <strong>MIT's Plasma Science and Fusion Center</strong> — fabricating Spin-Orbit Torque magnetic switching devices via e-beam evaporation, optical lithography, and characterizing them on a cryogenic PPMS system.</p>
-        <p>At UT, I design flight hardware for the <strong>CubeSat team</strong> and am an incoming hardware intern at <strong>Kurtin Robotics</strong>. My personal projects span power conversion, motor control, RF, and sensors — all documented with schematics, layout files, and build notes.</p>
+        <p>I'm an Electrical &amp; Computer Engineering student at UT Austin (graduating May 2029) focused on PCB design and power electronics. I build boards that solve real problems, fly on spacecraft, and drive motors on robots.</p>
+        <p>Before UT, I researched at MIT's Plasma Science and Fusion Center, fabricating Spin-Orbit Torque magnetic switching devices via e-beam evaporation, lithography, and characterizing them on a cryogenic PPMS system.</p>
+        <p>At UT, I design flight hardware for Texas Spacecraft Laboratory and am an incoming robotics engineering intern at Kurtin Robotics. My personal projects span power conversion, motor control, RF, and sensors — all documented with schematics, layout files, and build notes.</p>
       </div>
       <div class="about-aside reveal-right">
         <div>
           <h4 class="aside-h">Experience</h4>
           <div class="exp-item">
-            <div class="exp-t">Hardware Engineering Intern</div>
+            <div class="exp-t">Robotics Engineering Intern</div>
             <div class="exp-o">Kurtin Robotics · Summer 2025</div>
-            <div class="exp-d">Embedded systems and hardware design for robotics applications.</div>
+            <div class="exp-d">Hardware design for robotics applications.</div>
           </div>
           <div class="exp-item">
-            <div class="exp-t">Undergraduate Research Assistant</div>
+            <div class="exp-t">Research Intern</div>
             <div class="exp-o">MIT Plasma Science and Fusion Center</div>
             <div class="exp-d">SOT magnetic devices. E-beam evaporation, lithography, cryogenic PPMS characterization.</div>
           </div>
           <div class="exp-item">
-            <div class="exp-t">Flight PCB Designer</div>
-            <div class="exp-o">UT Austin CubeSat Team</div>
-            <div class="exp-d">EGSE board with MCU + USB-C. Designing Flight Prep Panel for CDH interface.</div>
+            <div class="exp-t">Electrical Power Systems Engineer</div>
+            <div class="exp-o">Texas Spacecraft Laboratory</div>
+            <div class="exp-d">Designed EGSE board with MCU + USB-C and Flight Preparation Panel for CDH interface.</div>
           </div>
         </div>
         <div>
@@ -681,7 +677,7 @@
       <div class="foot-links">
         <a href="https://github.com/stevenmark2" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/steven-wimberly-38854a222/" target="_blank">LinkedIn</a>
-        <a href="mailto:YOUR_EMAIL@utexas.edu">Email</a>
+        <a href="mailto:smw4789@my.utexas.edu">Email</a>
       </div>
       <p class="foot-copy">ECE @ UT Austin · 2025</p>
     </div>
@@ -689,19 +685,14 @@
 </footer>
 
 <script>
-  // ── NAV scroll effect
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // ── Scroll reveal (Intersection Observer)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Don't unobserve — keep visible once triggered
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
@@ -709,7 +700,6 @@
     observer.observe(el);
   });
 
-  // ── Waveform draw on scroll into view
   const waveObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -722,7 +712,6 @@
   const waveform = document.getElementById('waveform');
   if (waveform) waveObserver.observe(waveform);
 
-  // ── Subtle parallax on PCB graphic
   const pcbWrap = document.querySelector('.pcb-wrap');
   if (pcbWrap) {
     window.addEventListener('mousemove', (e) => {
